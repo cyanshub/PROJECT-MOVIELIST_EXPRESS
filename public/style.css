@@ -102,3 +102,9 @@ a {
   background-repeat: no-repeat;
 }
 /* 設定專案共用樣式: end */
+/* 專案樣式: start */
+h1 {
+  color: #226089;
+}
+
+/* 專案樣式: end */
