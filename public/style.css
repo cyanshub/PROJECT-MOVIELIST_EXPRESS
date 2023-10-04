@@ -78,3 +78,27 @@ a {
   --text-shadow: 1px 1px black;
 }
 /* 設定專案色彩:end */
+/* 設定專案共用樣式: start */
+html,
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--main-text-color);
+}
+
+a {
+  color: var(--main-text-color);
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto 3rem auto;
+}
+
+.background-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* 設定專案共用樣式: end */
