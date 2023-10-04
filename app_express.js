@@ -27,6 +27,17 @@ app.get("/", (req,res)=>{
 })
 
 
+// 分頁
+app.get("/movies/:movie_id", (req, res)=>{
+  const movie_id = Number(req.params.movie_id);
+  console.log("點選的電影 id:", movie_id);
+
+  // 利用 .find 陣列方法處理電影資料, 找出對應點選id的電影
+  const movie_find = movies.find(movie => movie.id === movie_id);
+
+  res.render("show", {movie:movie_find})
+})
+
 
 
 // 啟動並監聽伺服器
