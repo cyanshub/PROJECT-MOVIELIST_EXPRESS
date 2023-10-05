@@ -103,7 +103,22 @@ a {
 }
 /* 設定專案共用樣式: end */
 /* 專案樣式: start */
+header {
+  overflow: hidden;
+  height: 60px;
+}
 
+.navbar {
+  height: 100%;
+}
+
+.navbar .navbar-brand{
+  color: var(--navbar-brand-text-color)
+}
+
+.navbar .navbar-brand:hover {
+  color: var(--navbar-brand-hover-text-color);
+}
 
 
 /* 專案樣式: end */
