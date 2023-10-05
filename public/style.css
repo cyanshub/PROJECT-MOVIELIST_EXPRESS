@@ -74,9 +74,8 @@ a {
   --card-hover-text-color: #141b39;
   --card-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 
-  --restaurant-category-text-color: #666666;
-  --restaurant-show-title-text-color: white;
-  --restaurant-show-title-text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  --movie-show-title-text-color: white;
+  --movie-show-title-text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   --text-shadow: 1px 1px black;
 }
 /* 設定專案色彩:end */
@@ -195,7 +194,21 @@ header {
 }
 
 
+/* 設定分頁樣式 */
+.movie-show-title {
+  position: relative;
+  top: -150px;
+  color: var(--movie-show-title-text-color);
 
+  text-align: center;
+  font-size: 3rem;
+  line-height: 2;
+
+  box-shadow: var(--movie-show-title-text-shadow);
+  -webkit-box-shadow: var(--movie-show-title-text-shadow);
+  -moz-box-shadow: var(--movie-show-title-text-shadow);
+  text-shadow: var(--text-shadow);
+}
 
 
 
