@@ -39,3 +39,14 @@
     </div>
   </div>
 </div>
+
+
+{{!-- 實作頁碼功能 --}}
+<ul id="paginator" class="pagination justify-content-center">
+  {{#each pages}}
+  <li class="page-item">
+    <a class="page-link" href="/page={{this}}" data-page="{{this}}">{{this}}</a>
+  </li>
+  {{/each}}
+</ul>
+

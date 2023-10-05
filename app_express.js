@@ -19,11 +19,60 @@ const data_json = require("./public/data.json");
 const movies = data_json.movies;
 
 
+// 實作頁碼功能
+// 定義一頁顯示幾張圖卡
+const cards_per_page = 12;
+console.log(`定義一頁顯示幾張圖卡:${cards_per_page}`);
+
+
+// 處理陣列資料, data = 要處理的資料; page = 顯示的頁碼;
+function getItemsByPage (data, page){
+  const startIndex = (page - 1) * cards_per_page;
+  const endIndex = page * cards_per_page;
+  return data.slice(startIndex, endIndex); // .slice方法結尾不會參與作用
+}
+
+
+// 動態渲染網站頁數功能, amount = 圖卡數量; cards_per_page = 每頁顯示幾張圖卡
+function renderPaginator(amount) {
+  // 用圖卡數量決定網站頁數
+  const numberOfPages = Math.ceil(amount / cards_per_page);
+  console.log(`網站頁數:${numberOfPages}`);
+
+  // 產生指定長度的空陣列
+  let pages = Array(numberOfPages);
+  for (let i = 0; i < numberOfPages; i++) {
+    pages[i] = i + 1;
+  }
+  console.log(`動態產生網站頁數陣列:${pages}`);
+  return pages; // 回傳頁碼器陣列
+}
+
+
+// 動態取得對應資料的網站頁數
+const pages = renderPaginator(movies.length);
+
+
+
 // 使用.get方法設定首頁讀取路徑與渲染頁面
 // 首頁
 app.get("/", (req,res)=>{
   console.log("載入電影資料的第一部:",movies[0]);
-  res.render("index", {movies:movies})
+
+  // 預設顯示第1頁 
+  let page = 1;
+  let movies_page = getItemsByPage(movies, page); // 顯示對應頁碼圖卡
+  res.render("index", { movies: movies_page, pages: pages})
+})
+
+
+// 監聽點選的頁碼顯示相對應的圖卡: 應用動態路由功能
+app.get("/page=:page", (req,res)=>{
+  
+  // 應用頁碼功能顯示對應頁碼圖卡
+  page = Number(req.params.page);
+  movies_page = getItemsByPage(movies, page);
+  res.render("index", { movies: movies_page, pages: pages })
 })
 
 
