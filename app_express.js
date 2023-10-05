@@ -39,6 +39,19 @@ app.get("/movies/:movie_id", (req, res)=>{
 })
 
 
+// 搜尋
+app.get("/search", (req,res)=>{
+  const keyword = req.query.keyword;
+  console.log("擷取輸入的關鍵字:",keyword);
+
+  // 利用 .filter 陣列方法處理電影資料, 找出對應點選id的電影
+  const movies_filter = movies.filter(movie => 
+    movie.title.toLowerCase().includes(keyword.toLowerCase())||
+    movie.release_date.toLowerCase().includes(keyword.toLowerCase()));
+
+  res.render("index", {movies:movies_filter,keyword:keyword})
+})
+
 
 // 啟動並監聽伺服器
 app.listen(port,()=>{
