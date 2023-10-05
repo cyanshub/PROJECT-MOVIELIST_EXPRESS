@@ -71,7 +71,9 @@ a {
   --form-control-focus-shadow: none;
   --form-control-focus-border-color: #ced4da;
 
+  --card-hover-text-color: #141b39;
   --card-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
   --restaurant-category-text-color: #666666;
   --restaurant-show-title-text-color: white;
   --restaurant-show-title-text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -167,6 +169,33 @@ header {
 .form-control::placeholder {
   color: var(--placeholder-text-color);
 }
+
+
+
+/* 設定圖片集樣式 */
+.card {
+  height: 95%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card img {
+  height: 360px;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.card-title {
+  text-align: left;
+}
+
+.card:hover .card-title {
+  color: var(--card-hover-text-color);
+}
+
+
+
 
 
 
