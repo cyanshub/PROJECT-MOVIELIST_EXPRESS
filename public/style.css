@@ -211,5 +211,26 @@ header {
 }
 
 
+/* 導入媒體查詢 */
+@media screen and (max-width:992px) {
+  .card img {
+    height: 240px;
+  }
+}
 
+@media screen and (max-width:768px) {
+  .movie-show-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width:575px) {
+  .movie-show-title {
+    font-size: 1.5rem;
+  }
+
+  .card img {
+    height: auto;
+  }
+}
 /* 專案樣式: end */
