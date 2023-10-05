@@ -127,12 +127,47 @@ header {
   position: relative;
   z-index: -10;
   margin: -5px;
-  height: 250px;
+  height: 300px;
 
   /*容器要有尺寸才能正確投影*/
   background-image: var(--banner-background-img);
 
   filter:blur(3px);
 }
+
+
+/* 設定 search-bar 樣式 */
+.search-bar-outer {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px 30px;
+  margin-top: -90px;
+  border-radius: 8px;
+
+  background-color: var(--search-bar-outer-background-color);
+  box-shadow: var(--search-bar-outer-shadow);
+  -webkit-box-shadow: var(--search-bar-outer-shadow);
+  -moz-box-shadow: var(--search-bar-outer-shadow);
+}
+
+.search-bar-inner h4 {
+  color: var(--search-bar-inner-text-color);
+}
+
+.btn-major {
+  color: var(--btn-major-text-color);
+  background-color: var(--btn-major-background-color);
+}
+
+.form-control:focus{
+  box-shadow: none;
+  border-color: var(--form-control-focus-border-color);
+}
+  
+.form-control::placeholder {
+  color: var(--placeholder-text-color);
+}
+
+
 
 /* 專案樣式: end */
