@@ -103,6 +103,7 @@ a {
 }
 /* 設定專案共用樣式: end */
 /* 專案樣式: start */
+/* 設定 header 樣式 */
 header {
   overflow: hidden;
   height: 60px;
@@ -120,5 +121,18 @@ header {
   color: var(--navbar-brand-hover-text-color);
 }
 
+
+/* 設定 banner 樣式 */
+.banner {
+  position: relative;
+  z-index: -10;
+  margin: -5px;
+  height: 250px;
+
+  /*容器要有尺寸才能正確投影*/
+  background-image: var(--banner-background-img);
+
+  filter:blur(3px);
+}
 
 /* 專案樣式: end */
