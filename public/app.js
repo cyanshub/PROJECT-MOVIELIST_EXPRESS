@@ -44,14 +44,7 @@ let page; // 對應電影清單的頁碼
 let movies_page; // 對應頁碼的圖卡
 
 // 設計 function
-// function 1:處理陣列資料, data = 要處理的資料; page = 顯示的頁碼;
-function getItemsByPage(data, page) {
-  const startIndex = (page - 1) * cards_per_page;
-  const endIndex = page * cards_per_page;
-  return data.slice(startIndex, endIndex); // .slice方法結尾不會參與作用
-}
-
-// function 2:動態渲染網站頁數功能, amount = 圖卡數量; cards_per_page = 每頁顯示幾張圖卡
+// function 1:動態渲染網站頁數功能, amount = 圖卡數量; cards_per_page = 每頁顯示幾張圖卡
 function renderPaginator(amount) {
   // 用圖卡數量決定網站頁數
   const numberOfPages = Math.ceil(amount / cards_per_page);
@@ -76,6 +69,15 @@ function renderPaginator(amount) {
   })
   paginator.innerHTML = rawHTML;
 }
+
+
+// function 2:處理陣列資料, data = 要處理的資料; page = 顯示的頁碼;
+function getItemsByPage(data, page) {
+  const startIndex = (page - 1) * cards_per_page;
+  const endIndex = page * cards_per_page;
+  return data.slice(startIndex, endIndex); // .slice方法結尾不會參與作用
+}
+
 
 // function 3:功能:監聽點選的頁碼顯示相對應的圖卡
 if (!paginator) { } else {
