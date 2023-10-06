@@ -8,6 +8,11 @@ const dataPanel = document.querySelector("#data-panel-movielist");
 const dataPanelShow = document.querySelector("#data-panel-movielist-show");
 const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#search-input")
+const paginator = document.querySelector("#paginator")
+
+
+
+
 
 
 
