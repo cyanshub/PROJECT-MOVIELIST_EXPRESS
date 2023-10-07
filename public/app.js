@@ -151,17 +151,20 @@ let movie_find; // 要在分頁顯示的電影
 function showMovielist(item){
   let rawHTML = "";
   rawHTML += `
-  <h1 class="mb-1 movie-show-title">${item.title}</h1>
+    <h1 class="mb-1 movie-show-title">${item.title}</h1>
     <div class="container">
       <div class="col col-md-10 mx-auto">
-        <div class="row">
-          <p class="mb-3">Released date: ${item.release_date}</p>
-          <p class="mb-5">${item.description}</p>
-          <img src="./public/${item.image}" alt="${item.title}" class="rounded mb-5 w-100 d-block mx-auto"
-            style="max-width: 600px;">
+        <div class="row card-introduction">    
+          <div class="card-introduction-description">
+            <p class="mb-3">Released date: ${item.release_date}</p>
+            <p class="mb-5">${item.description}</p>
+          </div>
+          <div class="card-introduction-image">
+            <img src="./public/${item.image}" alt="${item.title}" class="rounded mb-5 w-100 d-block mx-auto" style="max-width: 600px;">
+          </div>
         </div>
       </div>
-    </div>  
+    </div>
   `
   dataPanelShow.innerHTML = rawHTML;
 }

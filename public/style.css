@@ -210,6 +210,17 @@ header {
   text-shadow: var(--text-shadow);
 }
 
+/* 將文字和圖片調成並排顯示 */
+.card-introduction {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem;
+}
+
+.card-introduction-description p {
+  font-size: 1.5rem;
+}
+
 
 /* 導入媒體查詢 */
 @media screen and (max-width:992px) {
@@ -221,6 +232,18 @@ header {
 @media screen and (max-width:768px) {
   .movie-show-title {
     font-size: 2rem;
+  }
+  
+  /* 將文字和圖片調回垂直顯示 */
+  .card-introduction {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 0;
+  }
+
+  .card-introduction-description p {
+    font-size: 1rem;
   }
 }
 
