@@ -98,7 +98,7 @@ app.get("/search", (req,res)=>{
   console.log("擷取輸入的關鍵字:",keyword);
 
   // 利用 .filter 陣列方法處理電影資料, 找出對應點選id的電影
-  const movies_filter = movies.filter(movie => 
+  let movies_filter = movies.filter(movie => 
     movie.title.toLowerCase().includes(keyword.toLowerCase())||
     movie.release_date.toLowerCase().includes(keyword.toLowerCase()));
 
@@ -116,7 +116,7 @@ app.get("/search", (req,res)=>{
     console.log(`無法找到含關鍵字${keyword}的項目`);
   }
   
-  res.render("index", {movies:movies_filter,keyword:keyword})
+  res.render("index", {movies:movies_filter,keyword:keyword,pages:pages_filter});
 })
 
 
