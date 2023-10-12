@@ -49,8 +49,14 @@ function renderPaginator(amount) {
 }
 
 
+// 呼叫函式: 產生所需要的變數
 // 動態取得對應資料的網站頁數
 const pages = renderPaginator(movies.length);
+
+// 在有page將資料進行分段的概念後，預設顯示第一段的陣列資料 
+let page = 1;
+let movies_page = getItemsByPage(movies, page); // 顯示對應頁碼圖卡
+
 
 
 
@@ -60,8 +66,6 @@ app.get("/", (req,res)=>{
   console.log("載入電影資料的第一部:",movies[0]);
 
   // 預設顯示第1頁 
-  let page = 1;
-  let movies_page = getItemsByPage(movies, page); // 顯示對應頁碼圖卡
   res.render("index", { movies: movies_page, pages: pages})
 })
 
