@@ -102,6 +102,20 @@ app.get("/search", (req,res)=>{
     movie.title.toLowerCase().includes(keyword.toLowerCase())||
     movie.release_date.toLowerCase().includes(keyword.toLowerCase()));
 
+  let pages_filter = [];
+
+
+  // 追加檢查: if 搜尋表單的輸入值為空白,渲染搜尋前的變數
+  if (!keyword.length) {
+    movies_filter = movies_page;
+    pages_filter = pages;
+  }
+
+  // 追加檢查: if 搜尋表單沒有結果
+  if (movies_filter.length === 0) {
+    console.log(`無法找到含關鍵字${keyword}的項目`);
+  }
+  
   res.render("index", {movies:movies_filter,keyword:keyword})
 })
 
