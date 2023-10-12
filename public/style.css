@@ -93,7 +93,7 @@ a {
 }
 
 .container {
-  width: 85%;
+  width: 95%;
   margin: 0 auto 3rem auto;
 }
 
@@ -172,6 +172,13 @@ header {
 
 
 /* 設定圖片集樣式 */
+.wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  grid-gap:1.5rem;
+}
+
 .card {
   height: 95%;
   width: 100%;
@@ -187,6 +194,9 @@ header {
 
 .card-title {
   text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card:hover .card-title {
@@ -218,6 +228,7 @@ header {
 }
 
 .card-introduction-description p {
+  text-align: left;
   font-size: 1.5rem;
 }
 
