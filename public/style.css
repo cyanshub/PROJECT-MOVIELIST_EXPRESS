@@ -123,6 +123,21 @@ header {
 }
 
 
+/* 設定 search-bar 樣式 */
+.search-bar {
+  width: 50%;
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+
+/* 設定 header 排版 */
+.navbar .container {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+
 /* 設定 banner 樣式 */
 .banner {
   position: relative;
@@ -136,24 +151,6 @@ header {
   filter:blur(3px);
 }
 
-
-/* 設定 search-bar 樣式 */
-.search-bar-outer {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px 30px;
-  margin-top: -260px;
-  border-radius: 8px;
-
-  background-color: var(--search-bar-outer-background-color);
-  box-shadow: var(--search-bar-outer-shadow);
-  -webkit-box-shadow: var(--search-bar-outer-shadow);
-  -moz-box-shadow: var(--search-bar-outer-shadow);
-}
-
-.search-bar-inner h4 {
-  color: var(--search-bar-inner-text-color);
-}
 
 .btn-major {
   color: var(--btn-major-text-color);
@@ -265,6 +262,15 @@ header {
 
   .card img {
     height: auto;
+  }
+
+  /* 調整搜尋列樣式 */
+  .navbar-brand-text {
+    display: none;
+  }
+  
+  .search-bar {
+    width: 85%;
   }
 }
 /* 專案樣式: end */
