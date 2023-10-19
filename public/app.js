@@ -179,6 +179,14 @@ movie_find = movies.find(movie => movie.id === movie_id);
 if (!dataPanelShow) { } else { showMovielist(movie_find) }
 
 
+// 利用 classList 功能, 在首頁以外的頁面隱藏搜尋列
+if (!dataPanel) { 
+  document.querySelector(".search-bar").classList.add("d-none");
+ } else {
+  document.querySelector(".search-bar").classList.remove("d-none");
+ }
+
+
 
 
 
